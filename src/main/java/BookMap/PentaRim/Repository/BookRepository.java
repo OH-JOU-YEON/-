@@ -8,5 +8,5 @@ public interface BookRepository {
 
     void save(Book book);
 
-    Book findByIsbn(Long isbn);
+    Book findByIsbn(String isbn);
 }
