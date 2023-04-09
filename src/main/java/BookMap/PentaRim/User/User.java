@@ -15,5 +15,7 @@ public class User {
 
     private Long id;
     private String NickName;
-    private List<Memo> memoList;
+    private List<Memo> memoList;  //일반 메모
+
+    //private String 상태메세지
 }
