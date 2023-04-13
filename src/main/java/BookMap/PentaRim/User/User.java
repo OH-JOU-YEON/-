@@ -13,7 +13,7 @@ import java.util.List;
 @Setter
 public class User {
 
-    private Long id;
+    private String id;
     private String NickName;
     private List<Memo> memoList;  //일반 메모
 
