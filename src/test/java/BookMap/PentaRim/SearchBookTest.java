@@ -1,6 +1,7 @@
 package BookMap.PentaRim;
 
 import BookMap.PentaRim.Book.Book;
+import BookMap.PentaRim.Book.SearchBook;
 import BookMap.PentaRim.service.BookSearchService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

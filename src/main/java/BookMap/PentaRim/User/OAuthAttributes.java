@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.Map;
-
+/*
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -46,3 +46,6 @@ public class OAuthAttributes {
                 .build();
     }
 }
+
+
+ */

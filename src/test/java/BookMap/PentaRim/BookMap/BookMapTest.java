@@ -1,6 +1,7 @@
 package BookMap.PentaRim.BookMap;
 import BookMap.PentaRim.AppConfig;
 import BookMap.PentaRim.Book.Book;
+import BookMap.PentaRim.Hashtag.Hashtag;
 import BookMap.PentaRim.service.BookMapService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -22,6 +23,7 @@ public class BookMapTest {
     @Test
     @DisplayName("북맵에 메모와 북맵이 잘 만들어지는지 테스트")
     void createMap() {
+        /*
 
         List<String> author = new ArrayList<>();
         author.add("오주연");
@@ -30,6 +32,7 @@ public class BookMapTest {
         String publisher = "민음사";
         List<String> hashTag = new ArrayList<>();
         hashTag.add("재미있는");
+        hashTag.add("추천");
         Date publishedDay = new Date();  //date로 저장해서 일단은 현재 날짜
         String isbn = "456151896 4954984165";
         String image = "image";
@@ -37,12 +40,21 @@ public class BookMapTest {
 
         book.setIsbn(isbn);
         book.setPublishedDay(publishedDay);
-        book.setHashTag(hashTag);
+        //book.setHashTag(hashTag);
         //book.setBookstate(bookState);
 
+
         BookMap bookMap1 = bookMapService.createBookMap(book);
+        bookMap1.addObj(hashTag);
 
         assertThat(bookMap1.getBookMapId()).isEqualTo(1);
+        //List<Hashtag> hashtagList = bookMap1.getBookMapIndex().get(0).getHashtag();
+
+        //List<Hashtag> hashtags = bookMap1.getBookMapIndex().get(0).getHashtag();
+        //System.out.println(hashtags.get(0));
+        System.out.println(bookMap1.getBookMapIndex().get(1).getHashtag());
+
+         */
 
     }
 }

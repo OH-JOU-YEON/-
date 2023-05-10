@@ -1,6 +1,7 @@
 package BookMap.PentaRim.service;
 
 import BookMap.PentaRim.Book.Book;
+import BookMap.PentaRim.Book.SearchBook;
 import BookMap.PentaRim.Book.SearchListBooks;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,6 +28,13 @@ public class BookSearchService {
     public Book searchBooks(String keyword){
 
         try {
+            if(keyword.contains(" ")){
+                String[] isbn = keyword.split(" ");
+                keyword = isbn[0];
+            }else{
+
+            }
+
             ClientHttpRequestFactory factory = new BufferingClientHttpRequestFactory(new SimpleClientHttpRequestFactory());
             RestTemplate restTemplate = new RestTemplate(factory);
 
@@ -43,8 +51,12 @@ public class BookSearchService {
             ResponseEntity<SearchListBooks> resultResponseEntity = restTemplate.exchange(targetUrl, HttpMethod.GET, httpEntity, SearchListBooks.class);
             //현재로서는 받을 때 list로 밖에 없음 -> SearchListBooks 객체는 필요함
             SearchListBooks searchListBooks = resultResponseEntity.getBody();
+            SearchBook searchBook = searchListBooks.getBooks().get(0);
+            String author = String.join(", ",searchBook.getAuthor());
 
-            return searchListBooks.getBooks().get(0);  //isbn으로 검색시 고유의 id이므로 하나의 책밖에 안뜸
+            Book book = new Book(searchBook.getTitle(),author, searchBook.getPublisher(),keyword ,searchBook.getImage());
+
+            return book;  //isbn으로 검색시 고유의 id이므로 하나의 책밖에 안뜸
 
         }catch (HttpStatusCodeException e) {
             if(e.getStatusCode() == HttpStatus.NOT_FOUND){

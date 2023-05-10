@@ -5,7 +5,7 @@ import BookMap.PentaRim.BookMap.BookMap;
 import BookMap.PentaRim.memo.Memo;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 @Service
@@ -78,5 +78,10 @@ public class BookMapServiceImpl implements BookMapService{
     @Override
     public void changeBookMapIndex(BookMap bookMap, int inputIndex, int outIndex){
         bookMap.changeIndex(inputIndex, outIndex);
+    }
+
+    @Override
+    public void addHashTag(BookMap bookMap, List<String> tags) {
+
     }
 }

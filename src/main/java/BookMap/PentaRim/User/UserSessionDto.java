@@ -12,7 +12,9 @@ public class UserSessionDto implements Serializable {
     private String email;
     private Role role;
 
+
     /* Entity -> Dto */
+    /*
         public UserSessionDto(User user) {
         this.username = user.getUsername();
         this.password = user.getPassword();
@@ -20,4 +22,5 @@ public class UserSessionDto implements Serializable {
         this.email = user.getEmail();
         this.role = user.getRole();
         }
+        */
 }

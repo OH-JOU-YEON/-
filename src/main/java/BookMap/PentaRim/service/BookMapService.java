@@ -2,12 +2,13 @@ package BookMap.PentaRim.service;
 
 import BookMap.PentaRim.Book.Book;
 import BookMap.PentaRim.BookMap.BookMap;
+import BookMap.PentaRim.Hashtag.Hashtag;
 import BookMap.PentaRim.memo.Memo;
 
 
 
 import java.util.ArrayList;
-
+import java.util.List;
 
 
 public interface BookMapService {
@@ -34,5 +35,6 @@ public interface BookMapService {
 
     void changeBookMapIndex(BookMap bookMap, int inputIndex, int outIndex);
 
+    void addHashTag(BookMap bookMap, List<String> tags);
 
 }

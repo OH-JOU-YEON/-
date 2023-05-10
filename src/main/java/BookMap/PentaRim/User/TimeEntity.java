@@ -10,6 +10,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/*
 @Getter
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
@@ -36,3 +37,6 @@ public class TimeEntity {
         this.modifiedDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm"));
     }
 }
+
+
+ */

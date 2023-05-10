@@ -4,6 +4,8 @@ import BookMap.PentaRim.Book.Book;
 import BookMap.PentaRim.Repository.BookRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class BookRepositoryServiceImpl {
 
@@ -16,7 +18,7 @@ public class BookRepositoryServiceImpl {
     public void join(Book book) {
         bookRepository.save(book);
     }
-    public Book findBookMap(String isbn) {
-        return bookRepository.findByIsbn(isbn);
+    public Optional<Book> findBookMap(Long id) {
+        return bookRepository.findById(id);
     }
 }
